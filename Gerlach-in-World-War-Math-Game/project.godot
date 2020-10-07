@@ -19,6 +19,16 @@ config/name="Gerlach-in-World-War-Math-Game"
 run/main_scene="res://src/Menu.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1366
+window/size/height=768
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Wall"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
