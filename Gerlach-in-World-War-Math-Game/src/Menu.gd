@@ -8,4 +8,4 @@ func _on_Button_pressed():
 
 
 func _on_start_game_pressed():
-	get_tree().change_scene("res://src/Map.tscn")
+	get_tree().change_scene("res://src/World.tscn")
