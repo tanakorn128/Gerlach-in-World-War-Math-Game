@@ -1,6 +1,7 @@
 extends KinematicBody2D
+var zoom_step = 1.1
 var velocity = Vector2()
-var speed = 1000
+export var speed = 10000
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
@@ -14,8 +15,7 @@ func _physics_process(delta):
 		velocity.y=speed
 	else:
 		velocity.y=0
-	
-	move_and_slide(velocity)
+	move_and_slide(velocity*delta)
 	
 	pass
 
