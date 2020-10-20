@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Gerlach-in-World-War-Math-Game"
 run/main_scene="res://src/Menu.tscn"
+config/use_custom_user_dir=true
 config/icon="res://icon.png"
 
 [display]
