@@ -2,7 +2,7 @@ extends Node2D
 func _process(delta):
 	if Input.is_action_pressed("ui_interact"):
 		_ready()
-	$wall3/AnimationPlayer.play("wall3")
+	$wall_3/AnimationPlayer.play("wall3")
 
 	pass
 func _ready():
@@ -34,7 +34,7 @@ func _on__body_entered(body):
 func _on_1_body_entered(body):
 	on1_body += 1
 	if on1_body > 1:
-		get_tree().change_scene("res://src/mission/Mission_Control.tscn")
+		get_tree().change_scene("src/mission/Mission_Control.tscn")
 	pass # Replace with function body.
 
 

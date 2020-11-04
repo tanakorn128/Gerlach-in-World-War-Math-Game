@@ -5,21 +5,20 @@ export var speed = 10000
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
-		$AnimatedSprite.play("walk")
-		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("left")
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x = speed
-		$AnimatedSprite.flip_h = false	
-		$AnimatedSprite.play("walk")
-	else:
-		velocity.x=0
-		$AnimatedSprite.play("idle")
-	if Input.is_action_pressed("ui_up"):
+		$AnimatedSprite.play("right")
+	elif Input.is_action_pressed("ui_up"):
 		velocity.y=-speed
+		$AnimatedSprite.play("up")
 	elif Input.is_action_pressed("ui_down"):
+		$AnimatedSprite.play("down")
 		velocity.y=speed
 	else:
 		velocity.y=0
+		velocity.x=0
+		$AnimatedSprite.play("idle")
 	move_and_slide(velocity*delta)
 	
 	pass
