@@ -72,33 +72,5 @@ func _on_load_pressed(): # load data file
 	pass # Replace with function body.
 
 
-func _on_delete_pressed(): #delete data file
-	var dir = Directory.new()
-	dir.remove(save_path)
-	pass # Replace with function body.
+
 	
-
-
-
-
-
-func _on_edit_pressed():
-	_on_load_pressed()
-	$question.insert_text_at_cursor(question)
-	$answer_1.insert_text_at_cursor(answer1)
-	$answer_2.insert_text_at_cursor(answer2)
-	$answer_3.insert_text_at_cursor(answer3)
-	$answer_4.insert_text_at_cursor(answer4)
-	
-	pass # Replace with function body.
-
-
-func _on_number_pressed():
-	
-
-	pass # Replace with function body.
-
-
-func _on_number_item_selected(index):
-	ID_Item = index+1
-	pass # Replace with function body.

@@ -3,11 +3,9 @@ extends OptionButton
 func _process(delta):
 	pass
 func _ready():
-	self.add_item("1",0)
+	self.add_item("1",1)
 	self.add_item("2",1)
-	self.add_item("3",2)
-	self.select(0)
-	print(self.get_selected())
+	self.add_item("3",1)
 	#self.clear()
 
 

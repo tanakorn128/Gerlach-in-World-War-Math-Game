@@ -1,0 +1,22 @@
+{
+ "exam1": {
+  "Id": 1,
+  "question": "",
+  "answer1": "",
+  "answer2": "",
+  "answer3": "",
+  "answer4": "",
+  "Correct": "",
+  "image": ""
+ },
+ "exam2": {
+  "Id": 2,
+  "question": "",
+  "answer1": "",
+  "answer2": "",
+  "answer3": "",
+  "answer4": "",
+  "Correct": "",
+  "image": ""
+ }
+}
