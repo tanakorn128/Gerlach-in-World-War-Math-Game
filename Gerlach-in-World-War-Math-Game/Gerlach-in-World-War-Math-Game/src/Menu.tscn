@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -253.654
+margin_top = -190.865
+margin_right = 1666.35
+margin_bottom = 889.135
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1370.0
+margin_bottom = 611.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 247.0
+margin_right = 1370.0
+margin_bottom = 267.0
+alignment = 1
+
+[node name="start game" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 645.0
+margin_right = 725.0
+margin_bottom = 20.0
+text = "Start game"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 271.0
+margin_right = 1370.0
+margin_bottom = 291.0
+alignment = 1
+
+[node name="load" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 664.0
+margin_right = 706.0
+margin_bottom = 20.0
+text = "Load"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 295.0
+margin_right = 1370.0
+margin_bottom = 315.0
+alignment = 1
+
+[node name="setting" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 657.0
+margin_right = 713.0
+margin_bottom = 20.0
+text = "Setting"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 319.0
+margin_right = 1370.0
+margin_bottom = 339.0
+alignment = 1
+
+[node name="about" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 660.0
+margin_right = 710.0
+margin_bottom = 20.0
+text = "About"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 343.0
+margin_right = 1370.0
+margin_bottom = 363.0
+alignment = 1
+
+[node name="quit" type="Button" parent="VBoxContainer/HBoxContainer5"]
+margin_left = 665.0
+margin_right = 705.0
+margin_bottom = 20.0
+text = "Quit"
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/start game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer5/quit" to="." method="_on_Button_pressed"]
