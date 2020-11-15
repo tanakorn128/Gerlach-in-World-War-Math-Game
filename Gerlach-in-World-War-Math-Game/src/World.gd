@@ -2,7 +2,6 @@ extends Node2D
 func _process(delta):
 	if Input.is_action_pressed("ui_interact"):
 		_ready()
-	$wall_3/AnimationPlayer.play("wall3")
 
 	pass
 func _ready():
