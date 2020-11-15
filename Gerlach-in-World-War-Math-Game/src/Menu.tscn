@@ -81,5 +81,12 @@ margin_left = 665.0
 margin_right = 705.0
 margin_bottom = 20.0
 text = "Quit"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/start game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer5/quit" to="." method="_on_Button_pressed"]

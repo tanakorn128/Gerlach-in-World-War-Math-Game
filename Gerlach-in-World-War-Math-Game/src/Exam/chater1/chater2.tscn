@@ -219,5 +219,5 @@ __meta__ = {
 [connection signal="pressed" from="Control/merge_dictionary" to="Control" method="_on_merge_dictionary_pressed"]
 [connection signal="pressed" from="Control/OptionButton" to="Control/OptionButton" method="_on_OptionButton_pressed"]
 [connection signal="pressed" from="Control/remove" to="Control/remove" method="_on_remove_pressed"]
-[connection signal="pressed" from="Control/exam" to="Control/exam" method="_on_exam_pressed"]
 [connection signal="pressed" from="Control/exam" to="Control" method="_on_exam_pressed"]
+[connection signal="pressed" from="Control/exam" to="Control/exam" method="_on_exam_pressed"]

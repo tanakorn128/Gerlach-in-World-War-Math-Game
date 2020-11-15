@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://src/mission/Fight1.gd" type="Script" id=1]
+[ext_resource path="res://assets/vs.png" type="Texture" id=3]
+[ext_resource path="res://assets/porcupine.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "VS"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -771, -340 ), Vector2( -2074, -340 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2081, -304 ), Vector2( -2081, -304 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "NPC"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1150, 40 ), Vector2( 180, 40 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Font/THSarabunNew.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+font_data = SubResource( 7 )
+
+[node name="Mission" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="vs" type="Sprite" parent="."]
+position = Vector2( 684.197, 380.744 )
+scale = Vector2( 0.992648, 0.986458 )
+texture = ExtResource( 3 )
+
+[node name="HPlayer" type="HBoxContainer" parent="vs"]
+margin_left = -771.0
+margin_top = -340.0
+margin_right = 7817.0
+margin_bottom = -75.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="vs/HPlayer"]
+position = Vector2( 1599.16, 122.299 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="vs/HPlayer"]
+anims/VS = SubResource( 1 )
+anims/idle = SubResource( 2 )
+
+[node name="HNPC" type="HBoxContainer" parent="vs"]
+margin_left = -1150.0
+margin_top = 40.0
+margin_right = -187.0
+margin_bottom = 345.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPC2" type="AnimatedSprite" parent="vs/HNPC"]
+frames = SubResource( 3 )
+
+[node name="NPC" type="Sprite" parent="vs/HNPC"]
+position = Vector2( 251.589, 191.183 )
+scale = Vector2( 1.11568, 1.0941 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="vs/HNPC"]
+anims/NPC = SubResource( 4 )
+
+[node name="NPC" type="Label" parent="."]
+visible = false
+margin_left = 238.18
+margin_top = 138.246
+margin_right = 308.18
+margin_bottom = 191.246
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Label" parent="."]
+visible = false
+margin_left = 773.476
+margin_top = 391.951
+margin_right = 885.476
+margin_bottom = 457.951
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+process_priority = 1
+wait_time = 5.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
