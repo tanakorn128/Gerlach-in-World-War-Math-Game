@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>ไทย</Author>
+  <LastAuthor>ไทย</LastAuthor>
+  <Created>2020-11-19T06:08:26Z</Created>
+  <LastSaved>2020-11-19T16:38:45Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>7665</WindowHeight>
+  <WindowWidth>20490</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:CharSet="222" x:Family="Swiss" ss:Size="11"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="เวิร์กบุ๊ก1">
+  <Names>
+   <NamedRange ss:Name="ข้อมูลภายนอก_1" ss:RefersTo="=เวิร์กบุ๊ก1!R1C1:R5C7"/>
+  </Names>
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="5" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Column ss:Width="342"/>
+   <Column ss:Width="99.75"/>
+   <Column ss:Width="101.25" ss:Span="3"/>
+   <Column ss:Index="7" ss:Width="96"/>
+   <Column ss:Width="58.5"/>
+   <Row>
+    <Cell><Data ss:Type="String">Column1.Question</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">Column1.pictures</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">Column1.answer1</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">Column1.answer2</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">Column1.answer3</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">Column1.answer4</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">Column1.Correct</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">สลากหมายเลข 1 - 20 สุ่มหยิบ 2 ใบ พร้อมกัน ข้อใด อาจเกิดขึ้นหรือไม่เกิด</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String"> </Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">มีผลรวมเท่ากับ </Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">ผลรวมเท่ากับ 34</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">ผลคูนเท่ากับ 41</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">ผลคูนเท่ากับ 349</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">ผลรวมเท่ากับ 34</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ค่าประมาณของจำนวนเต็มหมื่นของ 863,250 คือข้อใด</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String"> </Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">861,000</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">862,000</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">860,000</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">870,000</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">860,000</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ค่าประมาณใกล้เคียงจำนวนเต็มล้านของ 15,500,000 คือข้อใด</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String"> </Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">1,500,000</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">15,000,000</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">16,000,000</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">16,500,000</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="String">16,000,000</Data><NamedCell
+      ss:Name="ข้อมูลภายนอก_1"/></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="Number">2</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="Number">3</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="Number">4</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="Number">5</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="Number">6</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+    <Cell><Data ss:Type="Number">7</Data><NamedCell ss:Name="ข้อมูลภายนอก_1"/></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>9</ActiveRow>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <QueryTable xmlns="urn:schemas-microsoft-com:office:excel">
+   <Name>ข้อมูลภายนอก_1</Name>
+   <QuerySource>
+    <QueryType>OLEDB</QueryType>
+    <CommandText>SELECT * FROM [chapter1]</CommandText>
+    <CommandType>SQL</CommandType>
+    <Maintain/>
+    <Connection>Provider=Microsoft.Mashup.OleDb.1;Data Source=$Workbook$;Location=chapter1;Extended Properties=&quot;&quot;</Connection>
+    <SourceDataFile></SourceDataFile>
+    <SourceConnectionFile></SourceConnectionFile>
+    <RobustConnect>0</RobustConnect>
+    <VersionLastEdit>6</VersionLastEdit>
+    <VersionLastRefresh>6</VersionLastRefresh>
+   </QuerySource>
+   <RefreshInfo>
+    <NextId>9</NextId>
+    <ColumnInfo>
+     <Id>2</Id>
+     <Name>Column1.Question</Name>
+    </ColumnInfo>
+    <ColumnInfo>
+     <Id>3</Id>
+     <Name>Column1.pictures</Name>
+    </ColumnInfo>
+    <ColumnInfo>
+     <Id>4</Id>
+     <Name>Column1.answer1</Name>
+    </ColumnInfo>
+    <ColumnInfo>
+     <Id>5</Id>
+     <Name>Column1.answer2</Name>
+    </ColumnInfo>
+    <ColumnInfo>
+     <Id>6</Id>
+     <Name>Column1.answer3</Name>
+    </ColumnInfo>
+    <ColumnInfo>
+     <Id>7</Id>
+     <Name>Column1.answer4</Name>
+    </ColumnInfo>
+    <ColumnInfo>
+     <Id>8</Id>
+     <Name>Column1.Correct</Name>
+    </ColumnInfo>
+   </RefreshInfo>
+  </QueryTable>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

@@ -1,1 +1,0 @@
-# Gerlach-in-World-War-Math-Game
