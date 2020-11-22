@@ -108,7 +108,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.378973, 0.189487 )
-scale = Vector2( 1.5, 1.625 )
+scale = Vector2( 3, 3 )
 frames = SubResource( 14 )
 animation = "up"
 frame = 2
@@ -116,7 +116,8 @@ speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 process_priority = 3
-position = Vector2( 0.117443, 0.146015 )
+position = Vector2( -0.477146, 7.28126 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 15 )
 one_way_collision_margin = 0.0
 

@@ -351,7 +351,6 @@ tile_data = PoolIntArray( -2228274, 2, 0, -2228273, 2, 0, -2228272, 2, 0, -22282
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1002.17, 700.742 )
-scale = Vector2( 2, 2 )
 
 [node name="wall" type="TileMap" parent="."]
 position = Vector2( -7.62939e-06, 2.11888 )
@@ -450,7 +449,6 @@ tile_data = PoolIntArray( -3997509, 0, 0, -2162711, 0, 0, -261782, 0, 0, 3670203
 
 [node name="hp" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1002.17, 700.742 )
-scale = Vector2( 2, 2 )
 
 [node name="Scene3" parent="." instance=ExtResource( 6 )]
-visible = false
+position = Vector2( 312, 288 )
