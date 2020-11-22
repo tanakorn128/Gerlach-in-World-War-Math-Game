@@ -75,7 +75,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Logger="*res://src/logger/logger.gd"
 Sound="*res://src/MainMenu/Sound.tscn"
 
 [display]

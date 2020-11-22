@@ -7,11 +7,7 @@ func _ready():
 	$Tabs/PlayButton/AnimationPlayer.play("PlayButtonPlay")
 	Input.set_custom_mouse_cursor(arrow)
 	Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
-	pass
 
-func _process(delta):
-	
-	pass
 
 
 func _on_SettingButton_pressed():

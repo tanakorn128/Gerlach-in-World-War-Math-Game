@@ -11,7 +11,8 @@
 [ext_resource path="res://assets/canvas red.png" type="Texture" id=9]
 [ext_resource path="res://assets/countdownProgress/CountDown_1.png" type="Texture" id=10]
 [ext_resource path="res://assets/countdownProgress/CountDown_2.png" type="Texture" id=11]
-[ext_resource path="res://src/Dialog gue Box.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Chapter/Ch1/Dialog gue Box.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )

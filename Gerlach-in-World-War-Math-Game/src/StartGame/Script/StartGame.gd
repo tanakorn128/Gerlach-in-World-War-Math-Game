@@ -32,8 +32,9 @@ signal EndScene2
 func _ready():
 	get_node("DialoBox1/Text").text = Shot.Shot1
 	get_node("Tabs").hide()
-func _process(delta):
 	$DialoBox1.connect("End",self,"Enddialog")
+func _process(delta):
+	
 	pass
 	
 func Enddialog():
@@ -55,7 +56,7 @@ func _input(event):
 			numshot +=1
 			spacebar = false
 		else:
-			get_tree().change_scene("res://src/World.tscn")
+			get_tree().change_scene("res://src/Chapter/Ch1/ch1.tscn")
 	if numshot == 23: 
 		SaveName()
 		get_node("Tabs").hide()

@@ -1,6 +1,6 @@
 extends Node2D
 var start_game = true
-var numshot = 2;
+var numshot = 2
 var SpaceBar = true
 var shot={
 	"shot2": "!!!...",
@@ -33,23 +33,24 @@ var shot={
 	"shot29": "เกอราช : ใจเย็นก่อน การที่ปีศาจจะมาที่ป่าแห่งนี้ได้ต้องผ่านป้อมปราการ และหมู่บ้านตอนใต้ ก่อน ข้าว่าต้องมีอะไรเกิดขึ้นที่หมู่บ้านแน่ๆ ข้าต้องรีบไปที่หมู่บ้าน!",
 	"shot30": "ภารกิจ : เดินทางไปยังหมู่บ้านตอนใต้(TIP หมู่บ้านตอนใต้อยู่ทางทิศตะวันออกของบ้านเกอราช)",
 	"shot31": "ป้าย : ทางไปหมู่บ้านตอนใต้",
-}
+	}
 func _ready():
-	$DialoBox.hide()
 	StartGame()
-	pass
+	var DialoBox = get_tree().get_root().find_node("DialoBox",true,false)
 	
-func _process(delta):
-	$DialoBox.connect("End",self,"Enddialog")
+	DialoBox.connect("End",self,"Enddialog")
+
+	
+	pass
 	
 func Enddialog():
 	SpaceBar = true
+	
 func _input(event):
-	if event.as_text() == "Space" and start_game and SpaceBar:
+	if event.as_text() == "Space"and start_game and SpaceBar:
 		StartGame()
-		pass
 	pass
-
+	
 func StartGame():
 	var StringShot = str(numshot)
 	var Data = str("shot"+StringShot)
@@ -61,4 +62,5 @@ func StartGame():
 		SpaceBar = false
 	else:
 		$DialoBox.hide()
+		pass
 	pass

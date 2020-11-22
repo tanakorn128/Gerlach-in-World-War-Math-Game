@@ -1,8 +1,9 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/character/red.png" type="Texture" id=1]
-[ext_resource path="res://src/Player.gd" type="Script" id=2]
-[ext_resource path="res://src/hp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Chapter/Ch1/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/Chapter/Ch1/hp.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
