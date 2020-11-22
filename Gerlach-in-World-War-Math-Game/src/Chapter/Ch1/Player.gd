@@ -1,23 +1,26 @@
 extends KinematicBody2D
 
 var velocity = Vector2()
-export var speed = 15000
 
+var Global
+var speed;
 func _physics_process(delta):
+	Global = get_node("/root/Global")
+	speed = Global.speed
 	if Input.is_action_pressed("ui_left"):
 		velocity.y = 0
 		velocity.x = -speed
-		$AnimatedSprite.play("left")
+		if speed > 0: $AnimatedSprite.play("left")
 	elif Input.is_action_pressed("ui_right"):
 		velocity.y = 0
 		velocity.x = speed
-		$AnimatedSprite.play("right")
+		if speed > 0: $AnimatedSprite.play("right")
 	elif Input.is_action_pressed("ui_up"):
 		velocity.x = 0
 		velocity.y=-speed
-		$AnimatedSprite.play("up")
+		if speed > 0: $AnimatedSprite.play("up")
 	elif Input.is_action_pressed("ui_down"):
-		$AnimatedSprite.play("down")
+		if speed > 0: $AnimatedSprite.play("down")
 		velocity.x = 0
 		velocity.y=speed
 		

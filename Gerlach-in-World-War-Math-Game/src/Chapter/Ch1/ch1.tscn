@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://src/Chapter/Ch1/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Chapter/Ch1/ch1.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=11]
 [ext_resource path="res://assets/reassets/Fence01_1.png" type="Texture" id=12]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=13]
+[ext_resource path="res://src/Chapter/Ch1/EvenCh1Scene3.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
@@ -449,4 +450,8 @@ format = 1
 tile_data = PoolIntArray( -3342272, 1, 0 )
 
 [node name="hp" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 1002.17, 700.742 )
+
+[node name="even" parent="." instance=ExtResource( 14 )]
+position = Vector2( 320, 296 )

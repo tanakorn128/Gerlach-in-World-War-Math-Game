@@ -1,7 +1,8 @@
 extends Node2D
 var start_game = true
-var numshot = 2
+var numshot = 10
 var SpaceBar = true
+
 var shot={
 	"shot2": "!!!...",
 	"shot3": "ยินดีต้อนรับสู่โลกของคณิตศาสตร์ ในโลกแห่งนี้ทุกอย่างล้วนแต่ตัดสินกันด้วยคณิตศาสตร์",
@@ -34,23 +35,60 @@ var shot={
 	"shot30": "ภารกิจ : เดินทางไปยังหมู่บ้านตอนใต้(TIP หมู่บ้านตอนใต้อยู่ทางทิศตะวันออกของบ้านเกอราช)",
 	"shot31": "ป้าย : ทางไปหมู่บ้านตอนใต้",
 	}
+var speed = 15000;
+var TempSpeed = 15000
+var Tree1 = false
+signal DialogBoxTeee1
 func _ready():
 	StartGame()
 	var DialoBox = get_tree().get_root().find_node("DialoBox",true,false)
-	
+	var Trees = get_tree().get_root().find_node("Scene3",true,false)
 	DialoBox.connect("End",self,"Enddialog")
+	Trees.connect("Tree1",self,"Tree1")
+	Trees.connect("Tree2",self,"Tree2")
+	Trees.connect("Tree3",self,"Tree3")
+	Trees.connect("Tree4",self,"Tree4")
+	$Tree1.hide()
+	$Tree2.hide()
+	$Scene3.show()
+	
+func _process(delta):
+	var Global = get_node("/root/Global")
+	Global.speed=speed
+	pass
+func Tree1():
+	$Tree1/Text.text="ตัดต้นไม้ต้นที่ 1 ???"
+	$Tree1.show()
+	speed = 0
+	Tree1 = true
+
+func Tree2():
+	$Tree2/Text.text="ตัดต้นไม้ต้นที่ 4 ???"
+	$Tree2.show()
+	speed = 0
+
+func Tree3():
+	$Tree3/Text.text="ตัดต้นไม้ต้นที่ 3 ???"
+	$Tree3.show()
+	speed = 0
 
 	
-	pass
-	
+func Tree4():
+	$Tree4/Text.text="ตัดต้นไม้ต้นที่ 4 ???"
+	$Tree4.show()
+	speed = 0
+
 func Enddialog():
 	SpaceBar = true
 	
 func _input(event):
 	if event.as_text() == "Space"and start_game and SpaceBar:
 		StartGame()
-	pass
-	
+	if event.as_text() == "Space":
+		if Tree1:
+			get_tree().change_scene("res://src/mission/Fight1.tscn")
+			$Tree1.hide()
+		pass
 func StartGame():
 	var StringShot = str(numshot)
 	var Data = str("shot"+StringShot)
@@ -60,7 +98,8 @@ func StartGame():
 		numshot += 1
 		$DialoBox/Text/AnimationPlayer.play("Present_Visible")
 		SpaceBar = false
+		speed = 0
 	else:
 		$DialoBox.hide()
-		pass
-	pass
+		speed = TempSpeed
+

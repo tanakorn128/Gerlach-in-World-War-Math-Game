@@ -1,8 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/mission/Fight1.gd" type="Script" id=1]
+[ext_resource path="res://assets/Player/Player.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/vs.png" type="Texture" id=3]
 [ext_resource path="res://assets/porcupine.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=9]
+resource_name = "AnimationSprite"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1250, 0 ), Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "VS"
@@ -91,11 +108,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer" type="VBoxContainer" parent="vs/HPlayer"]
+anchor_left = 0.00997084
+anchor_right = 0.00997084
+margin_left = 509.608
+margin_right = 509.608
+margin_bottom = 265.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="vs/HPlayer/VBoxContainer"]
+position = Vector2( 251.028, 61.2372 )
+scale = Vector2( 9.55779, 7.69782 )
+frames = ExtResource( 2 )
+animation = "vs1"
+
 [node name="Sprite" type="Sprite" parent="vs/HPlayer"]
+visible = false
 position = Vector2( 1599.16, 122.299 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="vs/HPlayer"]
+anims/AnimationSprite = SubResource( 9 )
 anims/VS = SubResource( 1 )
 anims/idle = SubResource( 2 )
 
