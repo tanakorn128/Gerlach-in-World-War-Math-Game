@@ -26,8 +26,9 @@ var Shot={
 	"Shot24":"และแล้วเกอราชก็ต้องพบเจอกับเหตุการณ์ที่เปลี่ยนแปลงชีวิตเขาไปตลอดกาล . . .", #shot24
 	}
 var NotEnd = true 
-var numshot = 2;
+var numshot = 23;
 var spacebar = true
+signal EndScene2
 func _ready():
 	get_node("DialoBox1/Text").text = Shot.Shot1
 	get_node("Tabs").hide()
@@ -58,6 +59,9 @@ func _input(event):
 	if numshot == 23: 
 		SaveName()
 		get_node("Tabs").hide()
+	if numshot == 24:
+		print("T")
+		emit_signal("EndScene2")
 
 func LoadData():
 	var dictTemp;

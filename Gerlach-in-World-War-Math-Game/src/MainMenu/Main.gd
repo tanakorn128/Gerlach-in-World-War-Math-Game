@@ -13,17 +13,6 @@ func _process(delta):
 	
 	pass
 
-func _on_Timer_timeout():
-	get_node("Tabs/SettingButton/Setting").speed_scale = 0.2
-	get_node("Tabs/HowToPlayButton/AnimationPlayer").play("HotToPlay")
-	pass # Replace with function body.
-
-
-func _on_Timer2_timeout():
-	get_node("Tabs/SettingButton/Setting").speed_scale = 0.0001
-	get_node("Tabs/HowToPlayButton/AnimationPlayer").play("idle")
-	pass # Replace with function body.
-
 
 func _on_SettingButton_pressed():
 	get_tree().change_scene("res://src/MainMenu/Setting.tscn")
@@ -37,4 +26,16 @@ func _on_HowToPlayButton_pressed():
 
 func _on_PlayButton_pressed():
 	get_tree().change_scene("res://src/StartGame/Scene/StartGame.tscn")
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	get_node("Tabs/SettingButton/Setting").speed_scale = 0.2
+	get_node("Tabs/HowToPlayButton/AnimationPlayer").play("HotToPlay")
+	pass # Replace with function body.
+
+
+func _on_Timer2_timeout():
+	get_node("Tabs/SettingButton/Setting").speed_scale = 0.0001
+	get_node("Tabs/HowToPlayButton/AnimationPlayer").play("idle")
 	pass # Replace with function body.

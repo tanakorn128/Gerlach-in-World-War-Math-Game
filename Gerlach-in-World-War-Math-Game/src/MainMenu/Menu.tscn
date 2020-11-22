@@ -76,7 +76,7 @@ tracks/0/keys = {
 [node name="Menu" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Menu" parent="." instance=ExtResource( 2 )]
+[node name="BG" parent="." instance=ExtResource( 2 )]
 
 [node name="Tabs" type="Tabs" parent="."]
 margin_left = -173.982
@@ -187,14 +187,12 @@ __meta__ = {
 anims/HotToPlay = SubResource( 3 )
 anims/idle = SubResource( 4 )
 
-[node name="Timer" type="Timer" parent="Tabs"]
-autostart = true
+[node name="Timer" type="Timer" parent="."]
 
-[node name="Timer2" type="Timer" parent="Tabs"]
+[node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 [connection signal="pressed" from="Tabs/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Tabs/SettingButton" to="." method="_on_SettingButton_pressed"]
 [connection signal="pressed" from="Tabs/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
-[connection signal="timeout" from="Tabs/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Tabs/Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

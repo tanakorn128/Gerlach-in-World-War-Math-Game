@@ -21,6 +21,7 @@ font_data = SubResource( 3 )
 [node name="hp" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -0.00190353, -0.0114193 )
 current = true
 smoothing_speed = 10.0
 

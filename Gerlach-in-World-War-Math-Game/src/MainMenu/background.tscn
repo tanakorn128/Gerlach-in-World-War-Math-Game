@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/theme/tres2/Button.tres" type="Theme" id=1]
 [ext_resource path="res://assets/image/ui/Arrow.png" type="Texture" id=4]
 [ext_resource path="res://assets/image/ui/Plus.png" type="Texture" id=5]
 [ext_resource path="res://assets/image/ui/BarChart.png" type="Texture" id=6]
@@ -70,7 +69,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.3
 
-[sub_resource type="ParticlesMaterial" id=10]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 2
 emission_box_extents = Vector3( 1024, 300, 1 )
 flag_disable_z = true
@@ -145,24 +144,5 @@ position = Vector2( 435.168, 211.886 )
 scale = Vector2( 0.2, 0.2 )
 lifetime = 10.0
 preprocess = 10.0
-process_material = SubResource( 10 )
+process_material = SubResource( 6 )
 texture = ExtResource( 13 )
-
-[node name="Tabs" type="Tabs" parent="."]
-margin_left = -173.982
-margin_top = 51.6333
-margin_right = 1.0184
-margin_bottom = 135.633
-theme = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="Tabs"]
-autostart = true
-
-[node name="Timer2" type="Timer" parent="Tabs"]
-wait_time = 2.0
-autostart = true
-[connection signal="timeout" from="Tabs/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Tabs/Timer2" to="." method="_on_Timer2_timeout"]
