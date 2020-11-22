@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/DialogBox/Scene/DialogBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=3]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=4]
 [ext_resource path="res://assets/reassets/Fence01.png" type="Texture" id=5]
@@ -284,6 +285,9 @@ points = PoolVector2Array( 2, 13, 12, 13, 12, 18, 2, 18 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 98.2006, 77.7279 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -392,3 +396,20 @@ tile_data = PoolIntArray( -3342272, 1, 0 )
 [node name="hp" parent="." instance=ExtResource( 1 )]
 position = Vector2( 684.476, 457.801 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="DialogBox" type="Node2D" parent="."]
+visible = false
+
+[node name="Tree1" parent="DialogBox" instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -134.941, 40.8285 )
+
+[node name="Area" type="Node2D" parent="."]
+
+[node name="Tree1" type="Area2D" parent="Area"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area/Tree1"]
+position = Vector2( 351.742, 434.964 )
+shape = SubResource( 20 )
+[connection signal="body_entered" from="Area/Tree1" to="." method="_on_Tree1_body_entered"]
+[connection signal="body_exited" from="Area/Tree1" to="." method="_on_Tree1_body_exited"]

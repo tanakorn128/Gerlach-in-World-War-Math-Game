@@ -8,9 +8,62 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Panel",
+"class": "GameLogPanel",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/GameLog/GameLogPanel/GameLogPanel.gd"
+}, {
+"base": "Tabs",
+"class": "MainMenuGameLog",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/GameLog/GameLog.gd"
+}, {
+"base": "Tabs",
+"class": "MainMenuPlayerStats",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/PlayerStats/PlayerStats.gd"
+}, {
+"base": "Tabs",
+"class": "MainMenuSettings",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/Settings/Settings.gd"
+}, {
+"base": "TabContainer",
+"class": "MainTabContainer",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/MainTabContainer.gd"
+}, {
+"base": "Button",
+"class": "PracticeDetailBtn",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/Practice/PracticeDetailBtn/PracticeDetailBtn.gd"
+}, {
+"base": "PopupPanel",
+"class": "PracticeSettingPopup",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/Settings/PracticeSettingPopup/PracticeSettingPopup.gd"
+}, {
+"base": "TabContainer",
+"class": "StatisticsTabContainer",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/PlayerStats/StatisticsTabContainer/StatisticsTabContainer.gd"
+}, {
+"base": "Tabs",
+"class": "StatsScoreTabs",
+"language": "GDScript",
+"path": "res://src/MainMenu/MainTabContainer/PlayerStats/StatisticsTabContainer/StatsScoreTabs.gd"
+} ]
 _global_script_class_icons={
-
+"GameLogPanel": "",
+"MainMenuGameLog": "",
+"MainMenuPlayerStats": "",
+"MainMenuSettings": "",
+"MainTabContainer": "",
+"PracticeDetailBtn": "",
+"PracticeSettingPopup": "",
+"StatisticsTabContainer": "",
+"StatsScoreTabs": ""
 }
 
 [application]
@@ -19,6 +72,11 @@ config/name="Gerlach-in-World-War-Math-Game"
 run/main_scene="res://src/MainMenu/Menu.tscn"
 config/use_custom_user_dir=true
 config/icon="res://icon.png"
+
+[autoload]
+
+Logger="*res://src/logger/logger.gd"
+Sound="*res://src/MainMenu/Sound.tscn"
 
 [display]
 

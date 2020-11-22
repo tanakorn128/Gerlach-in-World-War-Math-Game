@@ -1,4 +1,5 @@
-extends Control
+
+etends Control
 var dictionary = {}
 var couter = 0
 var remove = "exam1"

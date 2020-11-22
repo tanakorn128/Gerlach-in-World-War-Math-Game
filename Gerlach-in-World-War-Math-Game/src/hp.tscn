@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/Lifebars/VIDA_10.png" type="Texture" id=1]
 [ext_resource path="res://assets/Lifebars/VIDA_0 - Cขpia.png" type="Texture" id=2]
@@ -10,6 +10,13 @@ font_path = "res://Font/Kanit-Regular.ttf"
 [sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = SubResource( 3 )
 
 [node name="hp" type="Node2D"]
 
@@ -47,6 +54,18 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.882353, 0, 1 )
 text = "HP"
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Control"]
+margin_left = -374.709
+margin_top = -250.389
+margin_right = -322.709
+margin_bottom = -220.389
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.882353, 0, 1 )
+text = "Name"
 __meta__ = {
 "_edit_use_anchors_": false
 }
