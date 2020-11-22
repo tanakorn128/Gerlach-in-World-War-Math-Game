@@ -188,9 +188,11 @@ anims/HotToPlay = SubResource( 3 )
 anims/idle = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
+autostart = true
 [connection signal="pressed" from="Tabs/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Tabs/SettingButton" to="." method="_on_SettingButton_pressed"]
 [connection signal="pressed" from="Tabs/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
