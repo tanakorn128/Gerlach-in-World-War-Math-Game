@@ -14,11 +14,18 @@ func Correct():
 func NotCorrect():
 	$ColorRect/Label.text = str("เฉลย "+global.Correct)
 	$ColorRect.show()
+	$Tabs.show()
 	$Timer.start()
 	pass
 
 
 
 func _on_Timer_timeout():
+	#$ColorRect.hide()
+	pass # Replace with function body.
+
+
+func _on_Button_pressed():
 	$ColorRect.hide()
+	$Tabs.hide()
 	pass # Replace with function body.

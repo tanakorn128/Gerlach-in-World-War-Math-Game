@@ -25,9 +25,9 @@ current = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -627.0
-margin_top = -359.0
+margin_top = -345.0
 margin_right = -440.0
-margin_bottom = -332.0
+margin_bottom = -318.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -41,10 +41,10 @@ __meta__ = {
 }
 
 [node name="Health Bar" type="TextureProgress" parent="Control"]
-margin_left = -627.808
-margin_top = -338.053
-margin_right = -249.807
-margin_bottom = -298.052
+margin_left = -628.0
+margin_top = -324.0
+margin_right = -250.0
+margin_bottom = -284.0
 rect_scale = Vector2( 0.5, 0.5 )
 value = 100.0
 texture_under = ExtResource( 1 )
@@ -55,9 +55,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control"]
 margin_left = -654.798
-margin_top = -342.774
+margin_top = -328.774
 margin_right = -613.798
-margin_bottom = -312.774
+margin_bottom = -298.774
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.882353, 0, 1 )
 text = "HP"
@@ -68,9 +68,9 @@ __meta__ = {
 
 [node name="Name" type="Label" parent="Control"]
 margin_left = -621.954
-margin_top = -365.037
+margin_top = -351.037
 margin_right = -569.954
-margin_bottom = -335.037
+margin_bottom = -321.037
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Name"

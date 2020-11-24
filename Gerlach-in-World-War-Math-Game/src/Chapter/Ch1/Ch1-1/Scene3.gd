@@ -10,7 +10,7 @@ var nent = 2
 var boolshot = false
 func _ready():
 	dictionary2 = load_dialog()
-	dictionary2["showdialog1"] = "true"
+	dictionary2["showdialog1"] = "false"
 	dictionary2["end"] = "14"
 	save_dialog()
 	print(dictionary2)

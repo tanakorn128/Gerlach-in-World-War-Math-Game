@@ -65,6 +65,7 @@ func dboxshow1(): #แสดง DialogBox ด้านล้่าง
 		$DialogBox.show()
 	else:
 		$DialogBox.hide()
+		$DialogBox.numshot=1
 
 
 func dboxshow2(): #แสดง DialogBox ตรงกลาง
@@ -73,5 +74,6 @@ func dboxshow2(): #แสดง DialogBox ตรงกลาง
 		pass
 	else:
 		$DialogBox2.hide()
+		$DialogBox2.numshot=1
 		
 		

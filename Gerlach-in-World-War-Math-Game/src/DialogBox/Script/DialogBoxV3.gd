@@ -12,20 +12,19 @@ var dictionary2
 #end int
 
 func _ready():
-	send_dialogbox(1,10)
-	save_showdialog()
-	
-	print(load_showdialog())
+	#send_dialogbox(1,10)
+	#save_showdialog()
+	#print(load_showdialog())
 	pass
 
 func send_dialogbox(dialogbox,end):
 	dictionary2 = load_showdialog()
 	dictionary2["end"] = str(end)
 	if dialogbox == 1:
-		dictionary2["showdialog1"] = "false"
+		dictionary2["showdialog1"] = "true"
 		pass
 	if dialogbox == 2:
-		dictionary2["showdialog2"] = "false"
+		dictionary2["showdialog2"] = "true"
 	save_showdialog()
 	pass
 	
