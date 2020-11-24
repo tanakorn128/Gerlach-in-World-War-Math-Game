@@ -2,20 +2,23 @@ extends Control
 onready var health_Bar = $"Health Bar"
 onready var update_Weet = $Tween
 
-func _process(delta):
-	
-	pass
+var HP
 func _ready():
 	var Name = Load_Data_Player()
 	get_node("Name").text = Name.Name	
+	
+func _process(delta):
+	HP = Load_Data_Player()
+	$"Health Bar".value = int(HP.HP)
+	
 func _on_health_update(health):
 	health_Bar .value = health
 	update_Weet.interpolate_property(health_Bar, "value",
 		health_Bar.value, health, 0.4,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT,0.4)
 	update_Weet.start()
-	
-	
+
+var hp
 func Load_Data_Player():
 	var dictTemp;
 	var file = File.new();
@@ -26,10 +29,6 @@ func Load_Data_Player():
 	dictTemp = json_result.result;
 	file.close()
 	return dictTemp;
-	
-	pass
-
-
 
 
 

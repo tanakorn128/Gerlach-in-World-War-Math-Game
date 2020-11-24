@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/mission/Fight1.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player/Player.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/vs.png" type="Texture" id=3]
 [ext_resource path="res://assets/porcupine.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemy/EMTree1.png" type="Texture" id=5]
+[ext_resource path="res://assets/enemy/EMTree2.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=1]
 resource_name = "AnimationSprite"
 length = 2.5
 tracks/0/type = "value"
@@ -21,8 +23,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1250, 0 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "VS"
+[sub_resource type="Animation" id=2]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -37,8 +38,7 @@ tracks/0/keys = {
 "values": [ Vector2( -771, -340 ), Vector2( -2074, -340 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "values": [ Vector2( -2081, -304 ), Vector2( -2081, -304 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -61,8 +61,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=4]
-resource_name = "NPC"
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 50, 53 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 50, 53 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=5]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -77,19 +94,19 @@ tracks/0/keys = {
 "values": [ Vector2( -1150, 40 ), Vector2( 180, 40 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://Font/THSarabunNew.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 40
-font_data = SubResource( 5 )
+font_data = SubResource( 6 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://Font/THSarabunNew.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 40
-font_data = SubResource( 7 )
+font_data = SubResource( 8 )
 
 [node name="Mission" type="Node2D"]
 script = ExtResource( 1 )
@@ -109,10 +126,6 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="vs/HPlayer"]
-anchor_left = 0.00997084
-anchor_right = 0.00997084
-margin_left = 509.608
-margin_right = 509.608
 margin_bottom = 265.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="vs/HPlayer/VBoxContainer"]
@@ -127,29 +140,36 @@ position = Vector2( 1599.16, 122.299 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="vs/HPlayer"]
-anims/AnimationSprite = SubResource( 9 )
-anims/VS = SubResource( 1 )
-anims/idle = SubResource( 2 )
+anims/AnimationSprite = SubResource( 1 )
+anims/VS = SubResource( 2 )
+anims/idle = SubResource( 3 )
 
 [node name="HNPC" type="HBoxContainer" parent="vs"]
-margin_left = -1150.0
+margin_left = 180.0
 margin_top = 40.0
-margin_right = -187.0
+margin_right = 1143.0
 margin_bottom = 345.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NPC2" type="AnimatedSprite" parent="vs/HNPC"]
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 
 [node name="NPC" type="Sprite" parent="vs/HNPC"]
-position = Vector2( 251.589, 191.183 )
-scale = Vector2( 1.11568, 1.0941 )
-texture = ExtResource( 4 )
+visible = false
+position = Vector2( 237.229, 158.67 )
+scale = Vector2( 3.094, 3.094 )
+texture = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="vs/HNPC"]
+position = Vector2( 240.099, 145.627 )
+scale = Vector2( 3.98525, 3.91982 )
+frames = SubResource( 12 )
+playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="vs/HNPC"]
-anims/NPC = SubResource( 4 )
+anims/NPC = SubResource( 5 )
 
 [node name="NPC" type="Label" parent="."]
 visible = false
@@ -157,7 +177,7 @@ margin_left = 238.18
 margin_top = 138.246
 margin_right = 308.18
 margin_bottom = 191.246
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -169,7 +189,7 @@ margin_left = 773.476
 margin_top = 391.951
 margin_right = 885.476
 margin_bottom = 457.951
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

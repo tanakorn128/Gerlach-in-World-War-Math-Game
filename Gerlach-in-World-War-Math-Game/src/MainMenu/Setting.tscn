@@ -104,6 +104,9 @@ margin_bottom = 113.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0.466667, 0.713726, 1 )
 text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="Button" parent="Tabs"]
 margin_left = 55.632
@@ -128,4 +131,5 @@ __meta__ = {
 }
 [connection signal="pressed" from="Tabs/Audio" to="." method="_on_Audio_pressed"]
 [connection signal="pressed" from="Tabs/Display" to="." method="_on_Display_pressed"]
+[connection signal="pressed" from="Tabs/Reset" to="." method="_on_Reset_pressed"]
 [connection signal="pressed" from="Tabs/Back" to="." method="_on_Button_pressed"]

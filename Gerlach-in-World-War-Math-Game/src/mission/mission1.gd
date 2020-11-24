@@ -2,6 +2,7 @@ extends Node2D
 var Data;
 var Pictures = preload("res://assets/canvas/canvas Bule.png");
 var Correct = null;
+var SpaceBar_NotCorrect = true;
 var LeftClick
 var moust_over_control_answer1;
 var moust_over_control_answer2;
@@ -15,7 +16,7 @@ var HP_PLAYER = int(hp_Load().HP)
 var No # ข้อสอบที่
 var click = true;
 export var min_exam = 0;
-export var max_exam = 2;
+export var max_exam = 39;
 export var countdown = 60
 var mission = null
 func _ready():
@@ -36,7 +37,7 @@ func _process(delta):
 
 	
 func key_input():
-	if (Input.is_action_pressed("ui_interact")):
+	if (Input.is_action_pressed("ui_interact") and SpaceBar_NotCorrect):
 		countdown = 60
 		more_exam_Not_correct()
 		more_exam_correct()
@@ -139,8 +140,8 @@ func _on_countdown_timeout():
 	$countdown/countdownProgress.value = int(countdown) 
 	
 	if (countdown == 0):
-		get_node("dialog/Dialog Box/Body_NinePatchRect/MarginContainer/Label2").text = "เวลาหมด"
 		$dialog.show()
+		get_node("dialog/Dialog Box/Body_NinePatchRect/MarginContainer/Label2").text = "เวลาหมด"
 		mission = "TimeOut"
 	if (countdown != 0): countdown -= 1
 	pass # Replace with function body.
@@ -195,14 +196,16 @@ func hp_Save(Update):
 	pass
 	
 func Not_correct():
-	get_node("dialog/Dialog Box/Body_NinePatchRect/MarginContainer/Label2").text = "คำตอบไม่ถูกต้อง"
 	$dialog.show()
+	get_node("dialog/Dialog Box/Body_NinePatchRect/MarginContainer/Label2").text = "คำตอบไม่ถูกต้อง"
+	
 	HP_PLAYER -= 4.5
 	$Life/Player.value = HP_PLAYER
 	hp_Save(HP_PLAYER)
 	if (HP_PLAYER <= 0):
 		get_node("dialog/Dialog Box/Body_NinePatchRect/MarginContainer/Label2").text = "แพ้แล้ว"
 		mission = "lose"
+	
 
 
 

@@ -25,26 +25,30 @@ var Shot={
 	"Shot23":"เกอราชนั้นเป็นเพียงช่างตัดไม้ธรรมดาที่อาศัยอยู่ในป่าของหมู่บ้านทางตอนใต้ เขาใช้ชีวิตอย่างมีความสุข และสงบสุขในป่าและธรรมชาติ", #shot23
 	"Shot24":"และแล้วเกอราชก็ต้องพบเจอกับเหตุการณ์ที่เปลี่ยนแปลงชีวิตเขาไปตลอดกาล . . .", #shot24
 	}
+var loadsave
+var Data
 var NotEnd = true 
-var numshot = 23;
+var numshot = 1;
 var spacebar = true
 signal EndScene2
 func _ready():
+	loadsave = get_node("/root/SaveGame")
+	Data = loadsave.load_json()
+	
+	if (Data["StartGame"] == "Complate"):
+		get_tree().change_scene("res://src/Chapter/Ch1/ch1.tscn")
+		pass
 	get_node("DialoBox1/Text").text = Shot.Shot1
 	get_node("Tabs").hide()
 	$DialoBox1.connect("End",self,"Enddialog")
 func _process(delta):
-	
 	pass
 	
 func Enddialog():
 	spacebar = true
 	if numshot == 22:
 		get_node("Tabs").show()
-func ShowShot():
-	
-	
-	pass
+
 
 func _input(event):
 	var StringShot = str(numshot)
@@ -61,7 +65,6 @@ func _input(event):
 		SaveName()
 		get_node("Tabs").hide()
 	if numshot == 24:
-		print("T")
 		emit_signal("EndScene2")
 
 func LoadData():

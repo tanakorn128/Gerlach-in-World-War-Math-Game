@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+signal Test
 var velocity = Vector2()
 
 var Global
@@ -10,6 +10,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.y = 0
 		velocity.x = -speed
+		emit_signal("Test")
 		if speed > 0: $AnimatedSprite.play("left")
 	elif Input.is_action_pressed("ui_right"):
 		velocity.y = 0

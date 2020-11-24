@@ -1,6 +1,6 @@
 extends Node2D
-var start_game = true
-var numshot = 10
+var start_game = false
+var numshot = 2
 var SpaceBar = true
 
 var shot={
@@ -15,13 +15,13 @@ var shot={
 	"shot10": "และการบันทึกเกมนั้น สามารถบันทึกเกมได้ที่ตู้จดหมายประจำแต่ละ chapter ",
 	"shot11": "ฮิๆ ข้ารู้ว่าเจ้าพร้อมแล้ว",
 	"shot12": "มาจบสงครามโลกคณิตศาสตร์นี้ด้วยกันเถอะ",
-	"shot13": "CH1 ช่างตัดไม้ กับ ปีศาจ",
+	"shot13": "CH1 ช่างตัดไม้ กับ ปีศาจ (จำนวนนับ และการบวก การลบ การคูณ การหารจำนวนนับ)",
 	"shot14": "ภารกิจ : ตัดต้นไม้ขนาดใหญ่ 4 ต้นที่กระจัดกระจายอยู่ภายในป่า (TIP สามารอ่านป้ายในป่าเพื่อนำทางไปสู่ต้นไม้ได้)",
 	"shot15": "ตัดต้นไม้ต้นที่ 1 ???",
 	"shot16": "ตัดต้นไม้ต้นที่ 2 ???",
 	"shot17": "ตัดต้นไม้ต้นที่ 3 ???",
 	"shot18": "ตัดต้นไม้ต้นที่ 4 ???",
-	"shot19": "เกอราช : ปีศาจ!! มาได้ยังไง ทำไมมาอยู่ที่นี่ได้",
+	"shot19": "เกอราช : ปีศาจ!! มาได้ยังไง ทำไมมาอยู่ที่นี่ได้" ,
 	"shot20": "ปีศาจ : ????????????????????",
 	"shot21": "เกอราช : อะไร เจ้าพูดอะไร ข้าฟังไม่รู้เรื่องเลย เอ๋! เดี๋ยว! เจ้าจะเข้ามาทำไม อย่า อย่า อย่าเข้ามานะ",
 	"shot22": "ปีศาจ : ????????????????????",
@@ -37,69 +37,93 @@ var shot={
 	}
 var speed = 15000;
 var TempSpeed = 15000
-var Tree1 = false
+var loadsave;
+var shot13 = false;
+var shot14 = false;
+var closeshot13 = false
+var closeshot14 = false
+var hp
 signal DialogBoxTeee1
 func _ready():
-	StartGame()
+	loadsave = get_node("/root/SaveGame")
 	var DialoBox = get_tree().get_root().find_node("DialoBox",true,false)
+	var DialogBox2 = get_tree().get_root().find_node("DialogBox2",true,false)
+	var DialogBox3 = get_tree().get_root().find_node("DialogBox3",true,false)
 	var Trees = get_tree().get_root().find_node("Scene3",true,false)
 	DialoBox.connect("End",self,"Enddialog")
+	DialogBox2.connect("End",self,"Enddialog2")
+	DialogBox3.connect("End",self,"Enddialog3")
 	Trees.connect("Tree1",self,"Tree1")
 	Trees.connect("Tree2",self,"Tree2")
 	Trees.connect("Tree3",self,"Tree3")
 	Trees.connect("Tree4",self,"Tree4")
-	$Tree1.hide()
-	$Tree2.hide()
 	$Scene3.show()
+	$DialogBox2.hide()
+	$DialogBox3.hide()
+	loadsave.Save_json()
+	if loadsave.Data["StartGame"] == "NotComplate":
+		start_game = true
+		StartGame()
+	
+	
 	
 func _process(delta):
 	var Global = get_node("/root/Global")
 	Global.speed=speed
 	pass
-func Tree1():
-	$Tree1/Text.text="ตัดต้นไม้ต้นที่ 1 ???"
-	$Tree1.show()
-	speed = 0
-	Tree1 = true
-
-func Tree2():
-	$Tree2/Text.text="ตัดต้นไม้ต้นที่ 4 ???"
-	$Tree2.show()
-	speed = 0
-
-func Tree3():
-	$Tree3/Text.text="ตัดต้นไม้ต้นที่ 3 ???"
-	$Tree3.show()
-	speed = 0
-
-	
-func Tree4():
-	$Tree4/Text.text="ตัดต้นไม้ต้นที่ 4 ???"
-	$Tree4.show()
-	speed = 0
 
 func Enddialog():
 	SpaceBar = true
 	
+func Enddialog2():
+	if shot13:
+		closeshot13 = true
+func Enddialog3():
+	if shot14:
+		closeshot14 = true
 func _input(event):
 	if event.as_text() == "Space"and start_game and SpaceBar:
 		StartGame()
-	if event.as_text() == "Space":
-		if Tree1:
-			get_tree().change_scene("res://src/mission/Fight1.tscn")
-			$Tree1.hide()
-		pass
+		
+	if event.as_text() == "Space" and closeshot13 and start_game:
+		$DialogBox2.hide()
+		StartGame3()
+	if event.as_text() == "Space" and closeshot14 and start_game:
+		$DialogBox3.hide()
+		loadsave.dictionary["StartGame"] = "Complate"
+		loadsave.Save_json()
+		print("Save")
+		speed = TempSpeed
+	pass
 func StartGame():
 	var StringShot = str(numshot)
 	var Data = str("shot"+StringShot)
-	if start_game and numshot < 15:
-		$DialoBox/Text.text= shot[Data]
+	if start_game and numshot < 13 and start_game:
 		$DialoBox.show()
+		$DialoBox/Text.text= shot[Data]
 		numshot += 1
 		$DialoBox/Text/AnimationPlayer.play("Present_Visible")
 		SpaceBar = false
 		speed = 0
 	else:
 		$DialoBox.hide()
+		numshot += 1
 		speed = TempSpeed
+		StartGame2()
+		
+func StartGame2():
+	speed = 0
+	$DialogBox2.show()
+	$DialogBox2.numshot = 1
+	$DialogBox2.Shot["1"] = shot.shot13
+	$DialogBox2.print_dialog()
+	shot13 = true
+	pass
+func StartGame3():
+	$DialogBox3.show()
+	$DialogBox3.numshot = 1
+	$DialogBox3.Shot["1"] = shot.shot14
+	$DialogBox3.print_dialog()
+	shot14 =true
+	pass
 
