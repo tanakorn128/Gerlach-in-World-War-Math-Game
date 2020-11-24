@@ -1,6 +1,5 @@
 extends Node2D
 signal End
-signal End2
 var Shot
 var numshot = 1
 var next = true
@@ -10,6 +9,7 @@ func _ready():
 	numshot = 1
 	Shot =load_json()
 	#print_dialog()
+	
 	
 func _process(delta):
 	Shot =load_json()
