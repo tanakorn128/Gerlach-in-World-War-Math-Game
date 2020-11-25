@@ -37,6 +37,7 @@ func _ready():
 		dictionary["11"] = load_story2()["shot11"]
 		dictionary["12"] = load_story2()["shot12"]
 		dictionary["13"] = load_story2()["shot13"]
+		dictionary["14"] = "!!!!!"
 		savegame["Start"] = "Complate"
 		save_json()
 		Save_Game()

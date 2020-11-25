@@ -10,7 +10,7 @@ func _ready():
 	global = get_node("/root/Global")
 	showdialog1 = str(global.showdialog1) #ดุงข้อมูลจาก global
 	showdialog2 = str(global.showdialog2) #ดุงข้อมูลจาก global
-	
+	$DialogBox2.numshot=1
 
 func _process(delta):
 	dboxshow1()
