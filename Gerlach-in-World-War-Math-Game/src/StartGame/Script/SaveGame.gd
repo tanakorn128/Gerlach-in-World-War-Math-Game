@@ -19,7 +19,7 @@ var Player = {
 var Data
 
 func _ready():
-	Save_Game()
+	#Save_Game()
 	#Data = load_SaveGame()
 	#print(Data)
 	pass

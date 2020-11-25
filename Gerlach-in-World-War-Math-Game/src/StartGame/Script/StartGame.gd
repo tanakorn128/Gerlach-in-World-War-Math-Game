@@ -3,12 +3,15 @@ var showdialog1
 var showdialog2
 var global
 var path = "res://assets/story/chapter1/Shot.json";
+var pathname = "res://assets/Player/Player.json";
 var showdialog
 var Next = false
+var playername
 func _ready():
 	global = get_node("/root/Global")
 	showdialog1 = str(global.showdialog1) #ดุงข้อมูลจาก global
 	showdialog2 = str(global.showdialog2) #ดุงข้อมูลจาก global
+	
 
 func _process(delta):
 	dboxshow1()
@@ -27,7 +30,6 @@ func closedialog():
 		$DialogBox.hide()
 		$DialogBox.numshot = 1
 		showdialog["showdialog1"] = "false"
-		save_showdialog()
 		print(load_showdialog()["showdialog1"])
 	pass
 
@@ -84,4 +86,25 @@ func inputname():
 		$Tabs.show()
 	else:
 		$Tabs.hide()
+		playername = load_player()
+		playername["Name"] = get_node("Tabs/Name").text
+		Save_player()
 		pass
+	if $DialogBox.numshot == 24:
+		 ChangeScene()
+
+func load_player():
+	var dictTemp;
+	var file = File.new();
+	file.open(pathname,file.READ);
+	var json = file.get_as_text();
+	var json_result = JSON.parse(json)
+	dictTemp = json_result.result;
+	file.close()
+	return dictTemp;
+
+func Save_player():
+	var f = File.new()
+	f.open(pathname, File.WRITE)
+	f.store_string(JSON.print(playername, "  ", true))
+	f.close()
