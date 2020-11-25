@@ -13,7 +13,7 @@ func _ready():
 	dictionary2["showdialog1"] = "false"
 	dictionary2["end"] = "14"
 	save_dialog()
-	print(dictionary2)
+	#print(dictionary2)
 	dictionary =load_json()
 	dictionary["1"] = "Hi...."
 	dictionary["2"] = load_story2()["shot2"]

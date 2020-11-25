@@ -77,6 +77,7 @@ config/icon="res://icon.png"
 
 Global="*res://src/StartGame/Script/Global.gd"
 Sound="*res://src/MainMenu/Sound.tscn"
+SaveGame="*res://src/StartGame/Script/SaveGame.gd"
 
 [display]
 

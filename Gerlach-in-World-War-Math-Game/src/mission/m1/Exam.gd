@@ -7,6 +7,8 @@ export var min_exam = 0
 export var max_exam = 28
 signal Correct
 signal NotCorrect
+var hp
+
 func _ready():
 	Exam = load_json()
 	PrintAnswer = GetExam(random())
@@ -39,8 +41,6 @@ func _on_Button4_pressed():
 	Answer = PrintAnswer.Answer4
 	Correct()
 	NotCorrect()
-	pass # Replace with function body.
-
 
 func RandomExam():
 	var ran = random()

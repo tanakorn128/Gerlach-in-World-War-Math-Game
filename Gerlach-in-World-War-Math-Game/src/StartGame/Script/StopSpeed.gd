@@ -11,7 +11,7 @@ var dictionary={
 
 func _on_Button_pressed():
 	#save_json()
-	print(load_json())
+	
 	
 	pass # Replace with function body.
 

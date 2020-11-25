@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	HP = Load_Data_Player()
 	$"Health Bar".value = int(HP.HP)
-	
+	pass
 func _on_health_update(health):
 	health_Bar .value = health
 	update_Weet.interpolate_property(health_Bar, "value",
@@ -18,7 +18,7 @@ func _on_health_update(health):
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT,0.4)
 	update_Weet.start()
 
-var hp
+
 func Load_Data_Player():
 	var dictTemp;
 	var file = File.new();

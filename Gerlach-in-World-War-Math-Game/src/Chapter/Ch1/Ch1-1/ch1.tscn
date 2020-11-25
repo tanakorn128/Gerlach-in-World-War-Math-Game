@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=1]
 [ext_resource path="res://assets/reassets/label1.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://src/Chapter/Ch1/ch1-2/ch1.gd" type="Script" id=13]
 [ext_resource path="res://src/Chapter/Ch1/Ch1-1/Evench1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Chapter/Ch1/Ch1-1/DialogBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Chapter/Ch1/Ch1-1/script/wall.gd" type="Script" id=16]
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
@@ -369,6 +370,7 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 6160623, 7, 0 )
+script = ExtResource( 16 )
 
 [node name="Tree" type="TileMap" parent="wall"]
 tile_set = SubResource( 8 )
