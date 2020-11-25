@@ -38,7 +38,7 @@ func _input(event):
 			save_dialog()
 	elif boolshot:
 		nent+=1
-		print("x")
+		#print("x")
 		pass
 
 

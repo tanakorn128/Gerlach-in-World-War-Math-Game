@@ -21,7 +21,7 @@ func _on_Display_pressed():
 
 
 func _on_Reset_pressed():
-	savegame.Save_json()
+	savegame.Save_Game()
 	savegame.Save_json_Hp()
 	print("Reset")
 	pass # Replace with function body.

@@ -62,6 +62,7 @@ func NotCorrect():
 		RandomExam()
 	else:
 		emit_signal("NotCorrect")
+		$countdown.value = 100
 		RandomExam()
 	pass
 func Correct():

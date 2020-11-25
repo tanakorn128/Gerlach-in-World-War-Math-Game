@@ -12,7 +12,9 @@ func Correct():
 	pass
 	
 func NotCorrect():
-
+	$TextureProgress.value -= 20
+	if $TextureProgress.value == 0:
+		get_tree().change_scene("res://src/Chapter/Ch1/Ch1-1/ch1.tscn")
 	pass
 
 
