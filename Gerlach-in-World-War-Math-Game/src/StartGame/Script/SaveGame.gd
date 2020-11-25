@@ -2,7 +2,7 @@ extends Node
 var pathsave = "res://assets/Player/SaveCh1.json"
 var pathhp = "res://assets/Player/Player.json"
 var savegame = {
-	"StartGame": "NotComplate",
+	"Start": "NotComplate",
 	"Tree" : "Tree0",
 	"Tree0": "NotComplete",
 	"Tree1": "NotComplete",
@@ -20,8 +20,8 @@ var Data
 
 func _ready():
 	Save_Game()
-	Data = load_SaveGame()
-	print(Data)
+	#Data = load_SaveGame()
+	#print(Data)
 	pass
 
 func Save_Game():
